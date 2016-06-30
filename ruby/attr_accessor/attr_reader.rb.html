@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/code/code-diagrams/attr_reader.rb.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v2">
+<meta name="syntax" content="ruby">
+<meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
+<meta name="colorscheme" content="Monokai">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #262626; }
+body { font-family: monospace; color: #ffffff; background-color: #262626; }
+* { font-size: 1em; }
+.Statement { color: #ff005f; }
+.String { color: #d7d787; }
+.rubyClass { color: #ff005f; }
+.rubyFunction { color: #afd700; }
+.rubySymbol { color: #af87ff; }
+.LineNr { color: #878787; background-color: #3a3a3a; padding-bottom: 1px; }
+.rubyStringDelimiter { color: #d7d787; }
+.rubyConstant { color: #5fd7ff; }
+.Define { color: #ff005f; }
+.Comment { color: #6c6c6c; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr"> 1 </span><span class="rubyClass">class</span> <span class="rubyConstant">Bottle</span>
+<span id="L2" class="LineNr"> 2 </span>  <span class="Define">def</span> <span class="rubyFunction">color</span>
+<span id="L3" class="LineNr"> 3 </span>    @color
+<span id="L4" class="LineNr"> 4 </span>  <span class="Define">end</span>
+<span id="L5" class="LineNr"> 5 </span>
+<span id="L6" class="LineNr"> 6 </span>  <span class="Define">def</span> <span class="rubyFunction">color=</span>(other)
+<span id="L7" class="LineNr"> 7 </span>    @color = other
+<span id="L8" class="LineNr"> 8 </span>  <span class="Define">end</span>
+<span id="L9" class="LineNr"> 9 </span><span class="rubyClass">end</span>
+<span id="L10" class="LineNr">10 </span>
+<span id="L11" class="LineNr">11 </span><span class="rubyClass">class</span> <span class="rubyConstant">Bottle</span>
+<span id="L12" class="LineNr">12 </span>  <span class="Statement">attr_reader</span> <span class="rubySymbol">:color</span>
+<span id="L13" class="LineNr">13 </span>  <span class="Statement">attr_writer</span> <span class="rubySymbol">:color</span>
+<span id="L14" class="LineNr">14 </span><span class="rubyClass">end</span>
+<span id="L15" class="LineNr">15 </span>
+<span id="L16" class="LineNr">16 </span><span class="rubyClass">class</span> <span class="rubyConstant">Bottle</span>
+<span id="L17" class="LineNr">17 </span>  <span class="Statement">attr_accessor</span> <span class="rubySymbol">:color</span>
+<span id="L18" class="LineNr">18 </span><span class="rubyClass">end</span>
+<span id="L19" class="LineNr">19 </span>
+<span id="L20" class="LineNr">20 </span>mine = <span class="rubyConstant">Bottle</span>.new
+<span id="L21" class="LineNr">21 </span>
+<span id="L22" class="LineNr">22 </span>mine.color <span class="Comment"># =&gt; nil</span>
+<span id="L23" class="LineNr">23 </span>mine.color = <span class="rubyStringDelimiter">&quot;</span><span class="String">Blue</span><span class="rubyStringDelimiter">&quot;</span>
+<span id="L24" class="LineNr">24 </span>mine.color <span class="Comment"># =&gt; &quot;Blue&quot;</span>
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
